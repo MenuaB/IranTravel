@@ -15,11 +15,10 @@ public class EntranceActivity extends AppCompatActivity {
 
         String s = getCacheDir().getAbsolutePath() + "/databases";
         Log.i(TAG, "db dir: " + s);
-
+        // db copy
         new DBHelper(this).copyDataBase();
 
     }
-
 
     public void enterMain(View v) {
         Intent enterMain = new Intent(this, MainActivity.class);
