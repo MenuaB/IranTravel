@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.example.android.irantravel.gallery.GalleryFragment;
+
 public class EntranceActivity extends AppCompatActivity {
 
     @Override
@@ -17,6 +19,8 @@ public class EntranceActivity extends AppCompatActivity {
         Log.i(TAG, "db dir: " + s);
         // db copy
         new DBHelper(this).copyDataBase();
+
+        GalleryFragment.newInstance(null,0).show(getSupportFragmentManager(),"a;fkjd");
 
     }
 
