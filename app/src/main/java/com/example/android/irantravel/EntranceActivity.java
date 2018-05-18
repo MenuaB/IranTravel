@@ -13,9 +13,7 @@ public class EntranceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrance);
 
-        String s = getCacheDir().getAbsolutePath() + "/databases";
-        Log.i(TAG, "db dir: " + s);
-        // db copy
+        //String s = getCacheDir().getAbsolutePath() + "/databases";
         new DBHelper(this).copyDataBase();
 
     }
@@ -24,7 +22,4 @@ public class EntranceActivity extends AppCompatActivity {
         Intent enterMain = new Intent(this, MainActivity.class);
         startActivity(enterMain);
     }
-
-
-    private final String TAG = "EnteraceActivity";
 }
