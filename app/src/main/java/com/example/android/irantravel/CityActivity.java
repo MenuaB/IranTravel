@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toolbar;
 
 import com.example.android.irantravel.Classes.Places;
 import com.example.android.irantravel.Fragments.FoodFragment;
@@ -46,14 +47,16 @@ public class CityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city);
 
-
-
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         Intent i = getIntent();
         CITY_NAME = i.getStringExtra(ARG_CIT);
         Bundle bundle = new Bundle();
         bundle.putString("ARG_CIT", CITY_NAME);
+
+        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_city);
+        toolbar.setTitle(""+CITY_NAME);
+
 
 
 

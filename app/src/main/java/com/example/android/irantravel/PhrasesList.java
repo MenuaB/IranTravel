@@ -36,7 +36,7 @@ public class PhrasesList extends AppCompatActivity {
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("foo");
+        toolbar.setTitle("Words");
         setSupportActionBar(toolbar);
 
 

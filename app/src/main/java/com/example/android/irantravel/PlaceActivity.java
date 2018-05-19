@@ -34,8 +34,8 @@ public class PlaceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_places);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_places);
+//        setSupportActionBar(toolbar);
 
         ivFirstImage = (ImageView) findViewById(R.id.pimage);
         tvName = (TextView) findViewById(R.id.p_name);
