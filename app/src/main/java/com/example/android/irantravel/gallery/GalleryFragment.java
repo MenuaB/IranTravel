@@ -10,9 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.android.irantravel.R;
+
 import java.util.ArrayList;
 
-import ir.beigirad.batoproject.R;
+//import ir.beigirad.batoproject.R;
 
 public class GalleryFragment extends DialogFragment {
     private static final String ARG_PARAM1 = "param1";
@@ -49,7 +51,7 @@ public class GalleryFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
-        dialog.getWindow().setBackgroundDrawableResource(R.drawable.transparent_background);
+        //dialog.getWindow().setBackgroundDrawableResource(R.drawable.transparent_background);
 
         return dialog;
     }
@@ -58,7 +60,8 @@ public class GalleryFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gallery, container, false);
+        //return inflater.inflate(R.layout.fragment_gallery, container, false);
+        return null;
     }
 
     ViewPager pager;
@@ -66,7 +69,7 @@ public class GalleryFragment extends DialogFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        pager = view.findViewById(R.id.gallery_pager);
+        //pager = view.findViewById(R.id.gallery_pager);
 
 
         GallryAdapter adapter = new GallryAdapter(getChildFragmentManager(), imageUrls);

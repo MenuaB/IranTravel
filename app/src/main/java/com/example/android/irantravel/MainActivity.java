@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                List<Category> list = Category.find(Category.class, "FCATEGORY = ?", "" + query);
+                List<Category> list = Category.findWithQuery( Category.class, "Select * from Category where ACATEGORY like '%"+query+"%'" );
                 if (list.size()<1)
                     return false;
 
@@ -73,11 +73,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        Phrases phrase = new Phrases("fhdsgf", "dsfdsag", "as", "sdfdsfvldnv");
-        phrase.save();
-
-        Category category = new Category("asdad", "bb", "a");
-        category.save();
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);

@@ -46,8 +46,7 @@ public class CityActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_city);
 
-        Places places = new Places(1,"asd","171726","vanak","didani","muze","map","wwww.muze.com","Tehran","wiki.com","Sights","http://bayanbox.ir/view/4615564230059055093/2ghVhYF-james-hetfield-wallpaper.jpg","http://bayanbox.ir/view/4615564230059055093/2ghVhYF-james-hetfield-wallpaper.jpg");
-        places.save();
+
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 

@@ -44,7 +44,7 @@ public class PhrasesList extends AppCompatActivity {
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                List<Phrases> list = Phrases.find(Phrases.class, "FPHRASE = ?", "" + query);
+                List<Phrases> list = Phrases.findWithQuery( Phrases.class, "Select * from Phrases where APHRASE like '%"+query+"%'" );
                 if (list.size()<1)
                     return false;
 

@@ -9,9 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
+//import com.bumptech.glide.Glide;
 
-import ir.beigirad.batoproject.R;
+//import ir.beigirad.batoproject.R;
 
 public class ImageFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
@@ -43,16 +43,17 @@ public class ImageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_image, container, false);
+        //return inflater.inflate(R.layout.fragment_image, container, false);
+        return null;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Glide.with(getContext())
-                .load(url)
-                .into((ImageView) view);
+//        //Glide.with(getContext())
+//                .load(url)
+//                .into((ImageView) view);
 
     }
 }

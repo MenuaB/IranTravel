@@ -27,16 +27,17 @@ public class PlaceActivity extends AppCompatActivity {
     TextView tvAddress;
     TextView tvDescription;
     ImageView ivMap;
+    ImageView ivFirstImage;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_places);
         setSupportActionBar(toolbar);
 
-
+        ivFirstImage = (ImageView) findViewById(R.id.pimage);
         tvName = (TextView) findViewById(R.id.p_name);
         tvType = (TextView) findViewById(R.id.p_type);
         tvNumber = (TextView) findViewById(R.id.p_number);
@@ -51,6 +52,7 @@ public class PlaceActivity extends AppCompatActivity {
         long placeId = getIntent().getLongExtra(ARG_PLACE_ID, 0);
         Places place = Places.find(Places.class, "ID = ?", "" + placeId).get(0);
 
+        Picasso.with(this).load(place.getImage_1()).into(ivFirstImage);
         tvName.setText(place.getName());
         tvType.setText(place.getType());
         tvNumber.setText(place.getnumber());
