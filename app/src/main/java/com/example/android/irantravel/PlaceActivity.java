@@ -37,15 +37,15 @@ public class PlaceActivity extends AppCompatActivity {
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_places);
 //        setSupportActionBar(toolbar);
 
-        ivFirstImage = (ImageView) findViewById(R.id.pimage);
-        tvName = (TextView) findViewById(R.id.p_name);
-        tvType = (TextView) findViewById(R.id.p_type);
-        tvNumber = (TextView) findViewById(R.id.p_number);
-        tvWebsite = (TextView) findViewById(R.id.p_website);
-        tvWiki = (TextView) findViewById(R.id.p_wiki);
-        tvAddress = (TextView) findViewById(R.id.p_address);
-        tvDescription = (TextView) findViewById(R.id.p_description);
-        ivMap = (ImageView) findViewById(R.id.p_map);
+        ivFirstImage =  findViewById(R.id.pimage);
+        tvName =  findViewById(R.id.p_name);
+        tvType =  findViewById(R.id.p_type);
+        tvNumber =  findViewById(R.id.p_number);
+        tvWebsite =  findViewById(R.id.p_website);
+        tvWiki =  findViewById(R.id.p_wiki);
+        tvAddress =  findViewById(R.id.p_address);
+        tvDescription =  findViewById(R.id.p_description);
+        ivMap =  findViewById(R.id.p_map);
 
 
 
@@ -64,7 +64,7 @@ public class PlaceActivity extends AppCompatActivity {
         Picasso.with(this).load(imgURL).into(ivMap);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab =  findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

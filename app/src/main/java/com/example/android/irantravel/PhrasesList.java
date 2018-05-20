@@ -1,6 +1,9 @@
 package com.example.android.irantravel;
 
 import android.content.Intent;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -27,6 +30,8 @@ public class PhrasesList extends AppCompatActivity {
     private MaterialSearchView searchView;
     private List<Phrases> phrases_list;
     private MyAdapter adapter;
+    private Intent i;
+    private String p;
 
 
     @Override
@@ -35,17 +40,17 @@ public class PhrasesList extends AppCompatActivity {
         setContentView(R.layout.activity_phrases_list);
 
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Words");
         setSupportActionBar(toolbar);
 
 
-        searchView = (MaterialSearchView) findViewById(R.id.search_view);
+        searchView = findViewById(R.id.search_view);
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                List<Phrases> list = Phrases.findWithQuery( Phrases.class, "Select * from Phrases where APHRASE like '%"+query+"%'" );
-                if (list.size()<1)
+                List<Phrases> list = Phrases.findWithQuery(Phrases.class, "Select * from Phrases where APHRASE like '%" + query + "%'");
+                if (list.size() < 1)
                     return false;
 
                 phrases_list.clear();
@@ -60,10 +65,16 @@ public class PhrasesList extends AppCompatActivity {
             }
         });
 
-        Intent i = getIntent();
-        String p = i.getStringExtra(ARG_CAT);
+//        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.setDrawerListener(toggle);
+//        toggle.syncState();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.phrases_list_recycler_view);
+        i = getIntent();
+        p = i.getStringExtra(ARG_CAT);
+
+        mRecyclerView = findViewById(R.id.phrases_list_recycler_view);
         mRecyclerView.hasFixedSize();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         phrases_list = Phrases.find(Phrases.class, "CATEGORY = ?", "" + p);
@@ -72,10 +83,25 @@ public class PhrasesList extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
     }
+    int backpress = 0;
+    @Override
+    public void onBackPressed() {
+
+        List<Phrases> list = Phrases.find(Phrases.class, "CATEGORY = ?", "" + p);
+        phrases_list.clear();
+        phrases_list.addAll(list);
+        adapter.notifyDataSetChanged();
+
+        backpress = backpress + 1;
+        if (backpress > 1){
+            super.onBackPressed();
+        }
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main,menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         MenuItem item = menu.findItem(R.id.action_search);
         searchView.setMenuItem(item);
         return super.onCreateOptionsMenu(menu);

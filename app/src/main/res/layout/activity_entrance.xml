@@ -6,21 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.android.irantravel.EntranceActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="147dp" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/enter"
+        android:scaleType="fitXY"/>
+
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter"
-        android:id="@+id/button"
-        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="enterMain"/>
+        android:layout_marginBottom="51dp"
+        android:onClick="enterMain"
+        android:text="Enter" />
 
 </RelativeLayout>
