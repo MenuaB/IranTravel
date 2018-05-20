@@ -2,41 +2,36 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="88dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
     android:orientation="vertical">
 
 
     <TextView
         android:id="@+id/a_category_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingTop="20dp"
+        android:layout_height="28dp"
         android:text="sacascascscsac"
         android:textColor="#000000"
-        android:textSize="16sp"
-        tools:mockup_opacity="87%" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/p_category_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
+        android:layout_height="24dp"
         android:text="dklccknlclskjdcl;zjkdjc"
         android:textColor="#000000"
-        android:textSize="14sp"
-        tools:mockup_opacity="54%" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/f_category_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="16dp"
-        android:paddingBottom="20dp"
+        android:layout_height="20dp"
         android:text="dklccknlclskjdcl;zjkdjc"
         android:textColor="#000000"
-        android:textSize="14sp"
-        tools:mockup_opacity="54%" />
+        android:textSize="16sp"
+        tools:mockup_opacity="90%" />
 
 
 </LinearLayout>
