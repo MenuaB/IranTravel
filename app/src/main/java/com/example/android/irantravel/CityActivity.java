@@ -54,7 +54,7 @@ public class CityActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString("ARG_CIT", CITY_NAME);
 
-        android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar_city);
+        android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.toolbar_city);
         toolbar.setTitle(""+CITY_NAME);
 
 

@@ -2,6 +2,7 @@ package com.example.android.irantravel.Adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
 import static com.example.android.irantravel.R.id.imageView;
 
 
@@ -36,11 +38,11 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
         public TextView tv4;
         public ViewHolder(View itemView) {
             super(itemView);
-            iv1 = (ImageView)itemView.findViewById(R.id.sight_image);
-            tv1 = (TextView)itemView.findViewById(R.id.sight_name);
-            tv2 = (TextView)itemView.findViewById(R.id.sight_callnumber);
-            tv3 = (TextView)itemView.findViewById(R.id.sight_address);
-            tv4 = (TextView)itemView.findViewById(R.id.sight_description);
+            iv1 = itemView.findViewById(R.id.sight_image);
+            tv1 = itemView.findViewById(R.id.sight_name);
+            tv2 = itemView.findViewById(R.id.sight_callnumber);
+            tv3 = itemView.findViewById(R.id.sight_address);
+            tv4 = itemView.findViewById(R.id.sight_description);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,6 +73,7 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
         holder.tv3.setText(places.getAddress());
         holder.tv4.setText(places.getDescription());
         Picasso.with(holder.iv1.getContext()).load(places.getImage_1()).into(holder.iv1);
+        Log.i(TAG, "onBindViewHolder: holder created");
     }
 
     @Override

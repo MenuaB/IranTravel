@@ -9,7 +9,7 @@ import com.orm.SugarRecord;
  */
 
 public class Places extends SugarRecord<Places> {
-    int ID;
+    Long ID;
     String name;
     String number;
     String address;
@@ -28,7 +28,7 @@ public class Places extends SugarRecord<Places> {
 
     }
 
-    public Places(int ID,String Name,String number,String address,String description,String type,String map,String website,String city,String wiki,String category,String image_1,String image_2){
+    public Places(Long ID,String Name,String number,String address,String description,String type,String map,String website,String city,String wiki,String category,String image_1,String image_2){
         this.ID = ID;
         this.name = Name;
         this.number = number;

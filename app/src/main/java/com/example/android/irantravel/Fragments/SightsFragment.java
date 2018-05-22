@@ -21,6 +21,7 @@ import com.example.android.irantravel.R;
 
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
 import static com.example.android.irantravel.CityActivity.ARG_CIT;
 
 /**
@@ -43,7 +44,7 @@ public class SightsFragment extends android.support.v4.app.Fragment implements P
 
 
 
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_views);
+        mRecyclerView =  view.findViewById(R.id.recycler_views);
         mRecyclerView.hasFixedSize();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         List<Places> places_list = Places.find(Places.class,"CITY = ? and CATEGORY = ?",""+a,"Sights");

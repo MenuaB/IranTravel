@@ -18,7 +18,7 @@ public class EntranceActivity extends AppCompatActivity {
         //String s = getCacheDir().getAbsolutePath() + "/databases";
         new DBHelper(this).copyDataBase();
 
-        //GalleryFragment.newInstance(null,0).show(getSupportFragmentManager(),"a;fkjd");
+
 
     }
 
