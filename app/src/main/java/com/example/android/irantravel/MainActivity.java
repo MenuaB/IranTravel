@@ -2,6 +2,7 @@ package com.example.android.irantravel;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -87,16 +88,30 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    boolean doubleBackToExitPressedOnce = false;
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            List<Category> list = Category.listAll(Category.class);
-            categories_list.clear();
-            categories_list.addAll(list);
-            adapter.notifyDataSetChanged();
+            if (doubleBackToExitPressedOnce) {
+                super.onBackPressed();
+                finish();
+                System.exit(0);
+            }
+
+            this.doubleBackToExitPressedOnce = true;
+            Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+            new Handler().postDelayed(new Runnable() {
+
+                @Override
+                public void run() {
+                    doubleBackToExitPressedOnce=false;
+                }
+            }, 2000);
         }
     }
 

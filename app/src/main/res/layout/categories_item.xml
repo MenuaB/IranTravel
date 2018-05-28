@@ -3,35 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="88dp"
+    android:orientation="horizontal"
     android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:orientation="vertical">
+    android:paddingRight="16dp">
 
+    <ImageView
+        android:id="@+id/category_image"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:scaleType="fitXY"/>
 
-    <TextView
-        android:id="@+id/a_category_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="28dp"
-        android:text="sacascascscsac"
-        android:textColor="#000000"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="5dp"
+        >
 
-    <TextView
-        android:id="@+id/p_category_view"
-        android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:text="dklccknlclskjdcl;zjkdjc"
-        android:textColor="#000000"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/a_category_view"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:text="sacascascscsac"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/f_category_view"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:text="dklccknlclskjdcl;zjkdjc"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        tools:mockup_opacity="90%" />
+        <TextView
+            android:id="@+id/p_category_view"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:text="dklccknlclskjdcl;zjkdjc"
+            android:textColor="#000000"
+            android:textSize="16sp" />
 
+        <TextView
+            android:id="@+id/f_category_view"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:text="dklccknlclskjdcl;zjkdjc"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:mockup_opacity="90%"
+            android:textAlignment="viewEnd"/>
+    </LinearLayout>
 
 </LinearLayout>

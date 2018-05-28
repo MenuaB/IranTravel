@@ -10,14 +10,16 @@ public class Category extends SugarRecord<Category> {
     String A_Category;
     String F_Category;
     String P_Category;
+    String Image;
 
     public Category(){
     }
 
-    public Category(String A_Category,String F_Category,String P_Category){
+    public Category(String A_Category,String F_Category,String P_Category,String Image){
         this.A_Category = A_Category;
         this.F_Category = F_Category;
         this.P_Category = P_Category;
+        this.Image = Image;
     }
 
     public String getA_Category() {
@@ -38,5 +40,9 @@ public class Category extends SugarRecord<Category> {
 
     public String getP_Category() {
         return P_Category;
+    }
+
+    public String getImage() {
+        return Image;
     }
 }

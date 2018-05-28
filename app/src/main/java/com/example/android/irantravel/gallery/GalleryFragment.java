@@ -51,7 +51,7 @@ public class GalleryFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
-        //dialog.getWindow().setBackgroundDrawableResource(R.drawable.transparent_background);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.black);
 
         return dialog;
     }
@@ -60,8 +60,9 @@ public class GalleryFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_gallery, container, false);
-        return null;
+        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        pager=root.findViewById(R.id.gallery_vp);
+        return root;
     }
 
     ViewPager pager;
@@ -70,7 +71,6 @@ public class GalleryFragment extends DialogFragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //pager = view.findViewById(R.id.gallery_pager);
-
 
         GallryAdapter adapter = new GallryAdapter(getChildFragmentManager(), imageUrls);
         pager.setAdapter(adapter);

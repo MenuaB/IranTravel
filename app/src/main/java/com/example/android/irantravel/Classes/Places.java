@@ -22,13 +22,15 @@ public class Places extends SugarRecord<Places> {
     String description;
     String image_1;
     String image_2;
+    String image_3;
+    String image_4;
 
 
     public Places(){
 
     }
 
-    public Places(Long ID,String Name,String number,String address,String description,String type,String map,String website,String city,String wiki,String category,String image_1,String image_2){
+    public Places(Long ID,String Name,String number,String address,String description,String type,String map,String website,String city,String wiki,String category,String image_1,String image_2,String image_3,String image_4){
         this.ID = ID;
         this.name = Name;
         this.number = number;
@@ -42,6 +44,8 @@ public class Places extends SugarRecord<Places> {
         this.category = category;
         this.image_1 = image_1;
         this.image_2 = image_2;
+        this.image_3 = image_3;
+        this.image_4 = image_4;
 
     }
 
@@ -93,5 +97,11 @@ public class Places extends SugarRecord<Places> {
         return image_2;
     }
 
+    public String getImage_3() {
+        return image_3;
+    }
 
+    public String getImage_4() {
+        return image_4;
+    }
 }

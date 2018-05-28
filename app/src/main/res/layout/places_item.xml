@@ -6,11 +6,11 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
-        android:layout_width="fill_parent"
+        android:layout_width="344dp"
         android:layout_height="400dp"
         android:layout_gravity="center"
         android:layout_margin="5dp"
-        card_view:cardCornerRadius="2dp"
+        card_view:cardCornerRadius="4dp"
         card_view:contentPadding="10dp">
 
         <LinearLayout
@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/sight_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="194dp"
                 android:scaleType="centerCrop" />
 
             <TextView

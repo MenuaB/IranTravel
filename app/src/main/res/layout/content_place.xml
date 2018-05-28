@@ -25,14 +25,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="Type"/>
+            android:text="Type" />
 
         <TextView
             android:id="@+id/p_website"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="Website"/>
+            android:autoLink="web"
+            android:text="Website"
+            android:textIsSelectable="true"
+            android:textStyle="italic" />
 
         <TextView
             android:id="@+id/p_number"
@@ -49,24 +52,28 @@
             android:text="Address" />
 
         <TextView
-            android:id="@+id/p_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="Descryption"/>
-
-        <TextView
             android:id="@+id/p_wiki"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/text_margin"
-            android:text="Wiki"/>
+            android:autoLink="web"
+            android:text="Wikipedia Page"
+            android:textIsSelectable="true"
+            android:textStyle="italic"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/p_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="Descryption" />
 
         <ImageView
             android:id="@+id/p_map"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            />
+            android:layout_width="350dp"
+            android:layout_height="350dp"
+            android:layout_margin="5dp" />
 
 
         <com.google.android.gms.maps.MapView

@@ -1,5 +1,7 @@
 package com.example.android.irantravel;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -50,14 +52,31 @@ public class PlaceActivity extends AppCompatActivity {
 
 
         long placeId = getIntent().getLongExtra(ARG_PLACE_ID, 0);
-        Places place = Places.find(Places.class, "ID = ?", "" + placeId).get(0);
+        final Places place = Places.find(Places.class, "ID = ?", "" + placeId).get(0);
 
         Picasso.with(this).load(place.getImage_1()).into(ivFirstImage);
         tvName.setText(place.getName());
         tvType.setText(place.getType());
-        tvNumber.setText(place.getnumber());
+        tvNumber.setText("Phone Number"+place.getnumber());
         tvWebsite.setText(place.getWebsite());
-        tvWiki.setText(place.getWiki());
+
+        tvWebsite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse(place.getWebsite()));
+                startActivity(browser);
+            }
+        });
+
+        tvWiki.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent browser= new Intent(Intent.ACTION_VIEW, Uri.parse(place.getWiki()));
+                startActivity(browser);
+            }
+        });
         tvAddress.setText(place.getAddress());
         tvDescription.setText(place.getDescription());
         String imgURL = place.getMap();
@@ -67,14 +86,13 @@ public class PlaceActivity extends AppCompatActivity {
         final ArrayList<String> list = new ArrayList<>();
         String entry1= place.getImage_1();
         String entry2= place.getImage_2();
+        String entry3= place.getImage_3();
+        String entry4= place.getImage_4();
         list.add(entry1);
         list.add(entry2);
-        if (list==null){
-            Log.i(null, "onCreate: image list is null");
+        list.add(entry3);
+        list.add(entry4);
 
-        }else{
-            Log.i(null, "onCreate: "+ list);
-        }
 
 
 

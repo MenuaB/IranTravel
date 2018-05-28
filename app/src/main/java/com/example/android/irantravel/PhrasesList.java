@@ -1,6 +1,8 @@
 package com.example.android.irantravel;
 
 import android.content.Intent;
+import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -14,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.android.irantravel.Adapters.MyAdapter;
 import com.example.android.irantravel.Classes.Category;
@@ -83,20 +86,31 @@ public class PhrasesList extends AppCompatActivity {
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
     }
-    int backpress = 0;
+
+    boolean doubleBackToExitPressedOnce = false;
+
     @Override
     public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
 
         List<Phrases> list = Phrases.find(Phrases.class, "CATEGORY = ?", "" + p);
         phrases_list.clear();
         phrases_list.addAll(list);
         adapter.notifyDataSetChanged();
 
-        backpress = backpress + 1;
-        if (backpress > 1){
-            super.onBackPressed();
-        }
+        new Handler().postDelayed(new Runnable() {
 
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 
     @Override

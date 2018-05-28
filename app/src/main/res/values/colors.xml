@@ -8,4 +8,6 @@
     <color name="colorSecandoryText">#757575</color>
     <color name="colorTextIcons">#FFFFFF</color>
     <color name="colorDivider">#BDBDBD</color>
+
+    <color name="black_overlay">#66000000</color>
 </resources>
