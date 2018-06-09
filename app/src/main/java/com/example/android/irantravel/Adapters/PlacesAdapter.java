@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bogdwellers.pinchtozoom.ImageMatrixTouchHandler;
 import com.example.android.irantravel.Classes.Category;
 import com.example.android.irantravel.Classes.Places;
 import com.example.android.irantravel.R;
@@ -33,17 +34,12 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
         public ImageView iv1;
         public TextView tv1;
-        public TextView tv2;
         public TextView tv3;
-        public TextView tv4;
         public ViewHolder(View itemView) {
             super(itemView);
             iv1 = itemView.findViewById(R.id.sight_image);
             tv1 = itemView.findViewById(R.id.sight_name);
-            tv2 = itemView.findViewById(R.id.sight_callnumber);
             tv3 = itemView.findViewById(R.id.sight_address);
-            tv4 = itemView.findViewById(R.id.sight_description);
-
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -69,11 +65,9 @@ public class PlacesAdapter extends RecyclerView.Adapter<PlacesAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder,int position) {
         final Places places = places_list.get(position);
         holder.tv1.setText(places.getName());
-        holder.tv2.setText(places.getnumber());
         holder.tv3.setText(places.getAddress());
-        holder.tv4.setText(places.getDescription());
         Picasso.with(holder.iv1.getContext()).load(places.getImage_1()).into(holder.iv1);
-        Log.i(TAG, "onBindViewHolder: holder created");
+
     }
 
     @Override

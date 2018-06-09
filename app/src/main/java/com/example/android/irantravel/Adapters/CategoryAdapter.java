@@ -1,5 +1,6 @@
 package com.example.android.irantravel.Adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
@@ -58,8 +59,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         holder.tv1.setText(category.getA_Category());
         holder.tv2.setText(category.getF_Category());
         holder.tv3.setText(category.getP_Category());
-        Picasso.with(holder.iv1.getContext()).load(category.getImage()).into(holder.iv1);
-        Log.i(TAG, "onBindViewHolder: imageview populated"+category.getImage());
+        Context context = holder.iv1.getContext();
+        int id = context.getResources().getIdentifier(category.getImage(), "drawable", context.getPackageName());
+        holder.iv1.setImageResource(id);
         final String token = category.getA_Category();
         holder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override

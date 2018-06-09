@@ -26,6 +26,7 @@ import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.List;
 
+
 public class PhrasesList extends AppCompatActivity {
     public static final String ARG_CAT = "item_category";
 
@@ -35,6 +36,7 @@ public class PhrasesList extends AppCompatActivity {
     private MyAdapter adapter;
     private Intent i;
     private String p;
+    private boolean notifyflag;
 
 
     @Override
@@ -42,11 +44,14 @@ public class PhrasesList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phrases_list);
 
+//        getActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Words");
+        toolbar.setTitle("Նախադասութիւններ");
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         searchView = findViewById(R.id.search_view);
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
@@ -59,6 +64,7 @@ public class PhrasesList extends AppCompatActivity {
                 phrases_list.clear();
                 phrases_list.addAll(list);
                 adapter.notifyDataSetChanged();
+                notifyflag = true;
                 return true;
             }
 
@@ -87,30 +93,27 @@ public class PhrasesList extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     boolean doubleBackToExitPressedOnce = false;
 
     @Override
     public void onBackPressed() {
-        if (doubleBackToExitPressedOnce) {
+        if (notifyflag) {
+            List<Phrases> list = Phrases.find(Phrases.class, "CATEGORY = ?", "" + p);
+            phrases_list.clear();
+            phrases_list.addAll(list);
+            adapter.notifyDataSetChanged();
+            notifyflag = false;
+        }else {
+            notifyflag = false;
             super.onBackPressed();
             return;
         }
-
-        this.doubleBackToExitPressedOnce = true;
-        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
-
-        List<Phrases> list = Phrases.find(Phrases.class, "CATEGORY = ?", "" + p);
-        phrases_list.clear();
-        phrases_list.addAll(list);
-        adapter.notifyDataSetChanged();
-
-        new Handler().postDelayed(new Runnable() {
-
-            @Override
-            public void run() {
-                doubleBackToExitPressedOnce=false;
-            }
-        }, 2000);
     }
 
     @Override

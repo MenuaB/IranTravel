@@ -1,5 +1,7 @@
 package com.example.android.irantravel.Classes;
 
+import android.content.Context;
+
 import com.orm.SugarRecord;
 
 /**
@@ -21,6 +23,7 @@ public class Category extends SugarRecord<Category> {
         this.P_Category = P_Category;
         this.Image = Image;
     }
+
 
     public String getA_Category() {
         return A_Category;
@@ -44,5 +47,6 @@ public class Category extends SugarRecord<Category> {
 
     public String getImage() {
         return Image;
+
     }
 }

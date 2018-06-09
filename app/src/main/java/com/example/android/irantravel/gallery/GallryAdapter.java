@@ -6,9 +6,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
-/**
- * Created by farhad-mbp on 3/21/18.
- */
 
 public class GallryAdapter extends FragmentPagerAdapter {
     ArrayList<String> urls = new ArrayList<>();

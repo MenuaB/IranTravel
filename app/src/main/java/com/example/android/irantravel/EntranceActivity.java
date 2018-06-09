@@ -71,6 +71,9 @@ public class EntranceActivity extends AppCompatActivity {
 
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
+        new DBHelper(this).copyDataBase();
+
+
         if (!prefs.getBoolean("firstTime", false)){
             new DBHelper(this).copyDataBase();
             SharedPreferences.Editor editor = prefs.edit();
@@ -82,13 +85,14 @@ public class EntranceActivity extends AppCompatActivity {
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
         mContentView = findViewById(R.id.fullscreen_content);
+        show();
 
-        mContentView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                toggle();
-            }
-        });
+//        mContentView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toggle();
+//            }
+//        });
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,13 +113,13 @@ public class EntranceActivity extends AppCompatActivity {
         delayedHide(100);
     }
 
-    private void toggle() {
-        if (mVisible) {
-            hide();
-        } else {
-            show();
-        }
-    }
+//    private void toggle() {
+//        if (mVisible) {
+//            hide();
+//        } else {
+//            show();
+//        }
+//    }
 
     private void hide() {
         // Hide UI first
@@ -123,8 +127,8 @@ public class EntranceActivity extends AppCompatActivity {
         if (actionBar != null) {
             actionBar.hide();
         }
-        mControlsView.setVisibility(View.GONE);
-        mVisible = false;
+//        mControlsView.setVisibility(View.GONE);
+//        mVisible = false;
 
         // Schedule a runnable to remove the status and navigation bar after a delay
         mHideHandler.removeCallbacks(mShowPart2Runnable);
@@ -139,8 +143,8 @@ public class EntranceActivity extends AppCompatActivity {
         mVisible = true;
 
         // Schedule a runnable to display UI elements after a delay
-        mHideHandler.removeCallbacks(mHidePart2Runnable);
-        mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
+//        mHideHandler.removeCallbacks(mHidePart2Runnable);
+//        mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
     }
 
     /**

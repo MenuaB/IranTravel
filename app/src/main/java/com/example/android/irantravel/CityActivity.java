@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toolbar;
 
 import com.example.android.irantravel.Classes.Places;
@@ -157,13 +158,13 @@ public class CityActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SIGHTS";
+                    return "Տեսարան";
                 case 1:
-                    return "FOOD";
+                    return "ճաշարան";
                 case 2:
-                    return "SHOPS";
+                    return "Առեւտրի կենտրոն";
                 case 3:
-                    return  "INFO";
+                    return  "Հայկական վայրեր";
             }
             return null;
         }

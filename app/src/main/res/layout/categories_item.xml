@@ -2,51 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="88dp"
+    android:layout_height="84dp"
     android:orientation="horizontal"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp">
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp">
 
     <ImageView
         android:id="@+id/category_image"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:scaleType="fitXY"/>
+        android:layout_width="55dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitXY"
+        android:paddingTop="8dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginLeft="8dp"
         >
 
         <TextView
             android:id="@+id/a_category_view"
             android:layout_width="match_parent"
-            android:layout_height="28dp"
+            android:layout_height="30dp"
+            android:paddingTop="8dp"
             android:text="sacascascscsac"
-            android:textColor="#000000"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="18sp" />
 
         <TextView
             android:id="@+id/p_category_view"
             android:layout_width="match_parent"
-            android:layout_height="24dp"
+            android:layout_height="28dp"
             android:text="dklccknlclskjdcl;zjkdjc"
-            android:textColor="#000000"
+            android:textColor="@color/colorSecondaryText"
             android:textSize="16sp" />
 
         <TextView
             android:id="@+id/f_category_view"
             android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:text="dklccknlclskjdcl;zjkdjc"
-            android:textColor="#000000"
+            android:layout_height="28dp"
+            android:text="نیمزدسمین"
+            android:textColor="@color/colorPrimaryText"
             android:textSize="16sp"
-            tools:mockup_opacity="90%"
-            android:textAlignment="viewEnd"/>
+            android:fontFamily="@font/irsans"
+            android:textAlignment="viewEnd"
+            android:gravity="end" />
     </LinearLayout>
 
 </LinearLayout>

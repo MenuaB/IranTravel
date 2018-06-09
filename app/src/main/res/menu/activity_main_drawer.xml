@@ -4,30 +4,26 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/cities"
-            android:title="Cities" >
+            android:title="Քաղաքներ" >
             <menu>
                 <item
-                    android:title="Tehran"
+                    android:title="Թեհրան"
                     android:id="@+id/tehran"></item>
                 <item
-                    android:title="Isfahan"
+                    android:title="Սպահան"
                     android:id="@+id/isfahan"></item>
                 <item
-                    android:title="Tabriz"
+                    android:title="Թավրիզ"
                     android:id="@+id/tabriz"></item>
                 <item
-                    android:title="Shiraz"
+                    android:title="Շիրազ"
                     android:id="@+id/shiraz"></item>
             </menu>
         </item>
         <item
             android:id="@+id/language"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Language" />
-        <item
-            android:id="@+id/information"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Information" />
+            android:title="Բառարան" />
     </group>
 
 

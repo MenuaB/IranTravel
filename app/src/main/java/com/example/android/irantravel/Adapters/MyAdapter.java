@@ -24,9 +24,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public TextView tv3;
         public ViewHolder(View itemView) {
             super(itemView);
-            tv1= (TextView) itemView.findViewById(R.id.a_phrase);
-            tv2= (TextView) itemView.findViewById(R.id.p_phrase);
-            tv3= (TextView) itemView.findViewById(R.id.f_phrase);
+            tv1=  itemView.findViewById(R.id.a_phrase);
+            tv2=  itemView.findViewById(R.id.p_phrase);
+            tv3=  itemView.findViewById(R.id.f_phrase);
         }
     }
 

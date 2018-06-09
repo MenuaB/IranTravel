@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:src="@drawable/milad"
-                android:scaleType="centerCrop"
+                android:scaleType="fitXY"
                 />
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -44,7 +44,7 @@
         android:layout_margin="@dimen/fab_margin"
         app:layout_anchor="@id/app_bar"
         app:layout_anchorGravity="bottom|end"
-        app:srcCompat="@drawable/ic_image_black_48dp"
+        app:srcCompat="@drawable/gallery"
         tools:layout_editor_absoluteX="276dp" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -51,6 +51,4 @@ public class FoodFragment extends android.support.v4.app.Fragment implements Pla
     public void selectplace(Places model) {
         Navigation.gotoPlace(this.getActivity(),model.getId());
     }
-
-
 }

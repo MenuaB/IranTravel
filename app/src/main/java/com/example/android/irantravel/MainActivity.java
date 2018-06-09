@@ -14,6 +14,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar =  findViewById(R.id.toolbar);
-        toolbar.setTitle("Words Category");
+        toolbar.setTitle("Բառերի Կատեգորիա");
         setSupportActionBar(toolbar);
 
         searchView =  findViewById(R.id.search_view);
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity
 
 
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+        drawer.openDrawer(Gravity.LEFT);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -142,22 +144,22 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.tehran) {
             Intent enterCity = new Intent(this, CityActivity.class);
-            String a = "Tehran";
+            String a = "Թեհրան";
             enterCity.putExtra(CityActivity.ARG_CIT, a);
             startActivity(enterCity);
         } else if (id == R.id.isfahan) {
             Intent enterCity = new Intent(this, CityActivity.class);
-            String a = "Isfahan";
+            String a = "Սպահան";
             enterCity.putExtra(CityActivity.ARG_CIT, a);
             startActivity(enterCity);
         } else if (id == R.id.tabriz) {
             Intent enterCity = new Intent(this, CityActivity.class);
-            String a = "Tabriz";
+            String a = "Թավրիզ";
             enterCity.putExtra(CityActivity.ARG_CIT, a);
             startActivity(enterCity);
         } else if (id == R.id.shiraz) {
             Intent enterCity = new Intent(this, CityActivity.class);
-            String a = "Shiraz";
+            String a = "Շիրազ";
             enterCity.putExtra(CityActivity.ARG_CIT, a);
             startActivity(enterCity);
         }

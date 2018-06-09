@@ -46,4 +46,6 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:8.3.0'
     compile 'com.squareup.picasso:picasso:2.4.0'
     testCompile 'junit:junit:4.12'
+    compile 'com.bogdwellers:pinchtozoom:0.1'
+
 }
